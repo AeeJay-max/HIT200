@@ -90,13 +90,13 @@ const SignIn = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
-      <div className="pointer-events-none fixed inset-0 -z-10 bg-[#f0f7f5]" />
+    <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-background">
+      <div className="pointer-events-none fixed inset-0 -z-10" />
 
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center space-x-1 mb-4">
-            <div className="flex items-center justify-center w-16 h-14 rounded-l-full bg-white shadow">
+            <div className="flex items-center justify-center w-16 h-14 rounded-l-full bg-white dark:bg-gray-500 dark:border dark:border-white/10 shadow">
               <img
                 src={logo}
                 alt="civicIssueLogo"
@@ -114,7 +114,7 @@ const SignIn = () => {
           </Link>
         </div>
 
-        <Card className="rounded-2xl shadow-2xl bg-white border-0">
+        <Card className="rounded-2xl shadow-2xl bg-white dark:bg-gray-500 dark:text-foreground border border-white dark:border-white/10">
           <CardHeader>
             <CardTitle>
               <center>Sign In</center>
@@ -128,7 +128,7 @@ const SignIn = () => {
               value={activeTab}
               onValueChange={(val) => setActiveTab(val as any)}
             >
-              <TabsList className="grid w-full grid-cols-2 rounded-full bg-gray-100 p-1">
+              <TabsList className="grid w-full grid-cols-2 rounded-full bg-gray-100 dark:bg-black p-1">
                 <TabsTrigger
                   value="citizen"
                   className="rounded-full transition-all duration-500 ease-in-out"

@@ -122,7 +122,7 @@ const ReportIssue = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#f3f6f8]">
+    <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="w-full border-b bg-white/10 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -153,7 +153,7 @@ const ReportIssue = () => {
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Map Section */}
-          <Card className="h-fit shadow-lg bg-white/80">
+          <Card className="h-fit shadow-lg bg-white/80 dark:bg-gray-500 dark:border-white/10">
             <CardHeader>
               <CardTitle className="flex items-center space-x-2  text-slate-600">
                 <MapPin className="h-5 w-5 text-green-600" />
@@ -182,7 +182,7 @@ const ReportIssue = () => {
           </Card>
 
           {/* Form Section */}
-          <Card className="shadow-lg bg-white/80  text-slate-600">
+          <Card className="shadow-lg bg-white/80 dark:bg-gray-500 dark:border-white/10  text-slate-600">
             <CardHeader>
               <CardTitle>Issue Details</CardTitle>
             </CardHeader>

@@ -51,7 +51,7 @@ export default function NotificationFeed() {
     return (
         <div className="space-y-4">
             {notifications.length === 0 ? (
-                <Card className="bg-white/70 backdrop-blur-md">
+                <Card className="bg-white/70 dark:bg-gray-500 dark:border-white/10 backdrop-blur-md">
                     <CardContent className="p-8 text-center text-gray-500">
                         <Bell className="w-8 h-8 mx-auto text-gray-400 mb-2" />
                         No new alerts from the municipality.
@@ -59,7 +59,7 @@ export default function NotificationFeed() {
                 </Card>
             ) : (
                 notifications.map(n => (
-                    <Card key={n._id} className={`bg-white/70 backdrop-blur-md shadow-sm border-l-4 ${getColor(n.type)} hover:shadow-md transition-shadow`}>
+                    <Card key={n._id} className={`bg-white/70 dark:bg-gray-500 dark:border-white/10 backdrop-blur-md shadow-sm border-l-4 ${getColor(n.type)} hover:shadow-md transition-shadow`}>
                         <CardHeader className="pb-2">
                             <div className="flex items-center gap-2">
                                 {getIcon(n.type)}

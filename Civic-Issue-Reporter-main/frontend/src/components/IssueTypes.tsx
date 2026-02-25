@@ -10,47 +10,47 @@ import image6 from '../assets/Victoria Falls.jpg'
 const IssueTypes = () => {
   const issueTypes = [
     {
-  icon : Construction,
-  title : "Road Infrastructure",
-  description : "Report potholes, damaged roads, missing manhole covers, broken sidewalks, and faulty traffic lights around Harare. These issues are handled by the Department of Works (Roads Section).",
-  image : image1,
-  count : "reports",
-},
-{
-  icon : Trash,
-  title : "Waste Management",
-  description : "Report uncollected garbage, overflowing bins, illegal dumpsites, or litter build-up in your area. This is handled by the Department of Works (Waste Management Section).",
-  image : image2,
-  count : "reports",
-},
-{
-  icon : TreeDeciduous,
-  title : "Environmental & Sanitation",
-  description : "Report blocked storm drains, overgrown grass, open sewage, or areas affected by poor sanitation or environmental neglect. These reports go to the Department of Health Services (Environmental Health Division).",
-  image : "https://plus.unsplash.com/premium_photo-1664298311043-46b3814a511f?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
-  count : "reports",
-},
-{
-  icon : Wrench,
-  title : "Public Utilities & Service Delivery",
-  description : "Report issues related to street lighting, telecommunications, or other council-managed public service delivery challenges. These are handled by the Department of Works (Public Lighting Section).",
-  image : image4,
-  count : "reports",
-},
-{
-  icon : Zap,
-  title : "Electricity & Power Supply",
-  description : "Report power outages, damaged power lines, or transformer faults. Electricity services are managed by the Zimbabwe Electricity Transmission and Distribution Company (ZETDC).",
-  image : image5,
-  count : "reports",
-},
-{
-  icon : Droplet,
-  title : "Water & Sewerage",
-  description : "Report burst or leaking water pipes, sewer blockages, contaminated water, or low water pressure. These issues are handled by the City of Harare Water Department (Harare Water).",
-  image : image6,
-  count : "reports",
-},
+      icon: Construction,
+      title: "Road Infrastructure",
+      description: "Report potholes, damaged roads, missing manhole covers, broken sidewalks, and faulty traffic lights around Harare. These issues are handled by the Department of Works (Roads Section).",
+      image: image1,
+      count: "reports",
+    },
+    {
+      icon: Trash,
+      title: "Waste Management",
+      description: "Report uncollected garbage, overflowing bins, illegal dumpsites, or litter build-up in your area. This is handled by the Department of Works (Waste Management Section).",
+      image: image2,
+      count: "reports",
+    },
+    {
+      icon: TreeDeciduous,
+      title: "Environmental & Sanitation",
+      description: "Report blocked storm drains, overgrown grass, open sewage, or areas affected by poor sanitation or environmental neglect. These reports go to the Department of Health Services (Environmental Health Division).",
+      image: "https://plus.unsplash.com/premium_photo-1664298311043-46b3814a511f?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+      count: "reports",
+    },
+    {
+      icon: Wrench,
+      title: "Public Utilities & Service Delivery",
+      description: "Report issues related to street lighting, telecommunications, or other council-managed public service delivery challenges. These are handled by the Department of Works (Public Lighting Section).",
+      image: image4,
+      count: "reports",
+    },
+    {
+      icon: Zap,
+      title: "Electricity & Power Supply",
+      description: "Report power outages, damaged power lines, or transformer faults. Electricity services are managed by the Zimbabwe Electricity Transmission and Distribution Company (ZETDC).",
+      image: image5,
+      count: "reports",
+    },
+    {
+      icon: Droplet,
+      title: "Water & Sewerage",
+      description: "Report burst or leaking water pipes, sewer blockages, contaminated water, or low water pressure. These issues are handled by the City of Harare Water Department (Harare Water).",
+      image: image6,
+      count: "reports",
+    },
   ];
 
   return (
@@ -70,7 +70,7 @@ const IssueTypes = () => {
           {issueTypes.map((type, index) => (
             <Card
               key={index}
-              className="group  bg-white/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in overflow-hidden"
+              className="group  bg-white/70 dark:bg-gray-500 dark:border-white/10 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative h-48 overflow-hidden">

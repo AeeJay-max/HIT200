@@ -116,9 +116,9 @@ const CitizenHome = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="min-h-screen bg-[#f3f6f8]"
+      className="min-h-screen bg-background"
     >
-      <div className="min-h-screen bg-[#f3f6f8]">
+      <div className="min-h-screen bg-transparent">
         <HeaderAfterAuth />
         <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-20 space-y-10">
           <div className="flex items-center justify-between">
@@ -142,7 +142,7 @@ const CitizenHome = () => {
           </div>
 
           <Tabs defaultValue="issues" className="w-full">
-            <TabsList className="grid w-full max-w-sm grid-cols-2 mb-8 bg-white/70 shadow border mx-auto md:mx-0">
+            <TabsList className="grid w-full max-w-sm grid-cols-2 mb-8 bg-white/70 dark:bg-gray-500 dark:border-white/10 shadow border mx-auto md:mx-0">
               <TabsTrigger value="issues">Recent Issues</TabsTrigger>
               <TabsTrigger value="alerts">Local Updates</TabsTrigger>
             </TabsList>
@@ -166,7 +166,7 @@ const CitizenHome = () => {
                     placeholder="Enter city name..."
                     value={searchCity}
                     onChange={(e) => setSearchCity(e.target.value)}
-                    className="pl-10 bg-white/70 backdrop-blur-md border border-gray-200 rounded-full placeholder:text-gray-400"
+                    className="pl-10 bg-white/70 dark:bg-gray-500 dark:border-white/10 backdrop-blur-md border border-gray-200 rounded-full placeholder:text-gray-400"
                   />
                 </div>
               </div>
@@ -191,9 +191,9 @@ const CitizenHome = () => {
                   {filteredIssues.map((issue) => (
                     <Card
                       key={issue._id}
-                      className={`rounded-2xl bg-white/70 backdrop-blur-md border border-gray-200 shadow-md hover:shadow-xl hover:scale-[1.02] transition-all ${issue.status === "Rejected"
-                          ? "opacity-30 grayscale"
-                          : "opacity-100"
+                      className={`rounded-2xl bg-white/70 dark:bg-gray-500 dark:border-white/10 backdrop-blur-md border border-gray-200 shadow-md hover:shadow-xl hover:scale-[1.02] transition-all ${issue.status === "Rejected"
+                        ? "opacity-30 grayscale"
+                        : "opacity-100"
                         }`}
                     >
                       <div className="relative h-48 overflow-hidden rounded-t-2xl">

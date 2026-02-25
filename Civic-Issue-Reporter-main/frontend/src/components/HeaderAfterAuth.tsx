@@ -3,6 +3,7 @@ import { Button } from "./ui/button.tsx";
 import { LogIn, LogOut, Shield, LayoutDashboard } from "lucide-react";
 import logo from '../assets/logo2.png';
 import { useAuth } from "../contexts/AuthContext.tsx";
+import { ThemeToggle } from "./ThemeToggle.tsx";
 
 type HeaderProps = {
   onFeaturesClick?: () => void;
@@ -45,6 +46,7 @@ const Header: React.FC<HeaderProps> = () => {
           </Link>
 
           <div className="flex items-center space-x-3">
+            <ThemeToggle />
             {user ? (
               <>
                 <span className="text-sm text-muted-foreground hidden sm:block">

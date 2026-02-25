@@ -4,6 +4,7 @@ import { LogIn, LogOut, Shield, User } from "lucide-react";
 import { useAuth } from "../contexts/AuthContext.tsx";
 import { handleSupportClick } from "./SupportModel.tsx";
 import logo from '../assets/logo2.png'
+import { ThemeToggle } from "./ThemeToggle.tsx";
 
 type HeaderProps = {
   onFeaturesClick?: () => void;
@@ -93,6 +94,7 @@ const Header: React.FC<HeaderProps> = ({
           </nav>
 
           <div className="flex items-center space-x-3">
+            <ThemeToggle />
             {user ? (
               <>
                 <span className="text-sm text-muted-foreground hidden sm:block">

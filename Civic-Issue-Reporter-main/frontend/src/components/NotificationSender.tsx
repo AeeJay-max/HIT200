@@ -43,7 +43,7 @@ export default function NotificationSender() {
     };
 
     return (
-        <Card className="max-w-xl mx-auto mt-6 shadow-lg bg-white/80">
+        <Card className="max-w-xl mx-auto mt-6 shadow-lg bg-white/80 dark:bg-gray-500 dark:border-white/10">
             <CardHeader>
                 <CardTitle>Send City-wide Alert</CardTitle>
                 <CardDescription>Notify citizens about sudden outages, maintenance, or emergencies.</CardDescription>

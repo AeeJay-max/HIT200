@@ -202,9 +202,9 @@ const AdminHome = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="min-h-screen bg-[#f3f6f8]"
+      className="min-h-screen bg-background"
     >
-      <div className="min-h-screen bg-[#f3f6f8]">
+      <div className="min-h-screen bg-transparent">
         <HeaderAfterAuth />
 
         <div className="pt-20 container mx-auto px-4 py-8 space-y-8">
@@ -263,7 +263,7 @@ const AdminHome = () => {
           </div>
 
           <Tabs defaultValue="issues" className="w-full">
-            <TabsList className="grid w-full max-w-2xl grid-cols-4 mx-auto mb-8 bg-white/70 shadow border">
+            <TabsList className="grid w-full max-w-2xl grid-cols-4 mx-auto mb-8 bg-white/70 dark:bg-gray-500 dark:border-white/10 shadow border">
               <TabsTrigger value="issues">Manage Issues</TabsTrigger>
               <TabsTrigger value="map">Interactive Map</TabsTrigger>
               <TabsTrigger value="analytics">Analytics</TabsTrigger>

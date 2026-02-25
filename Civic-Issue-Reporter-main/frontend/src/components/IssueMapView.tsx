@@ -1,8 +1,6 @@
-import React, { useEffect, useRef } from "react";
-import mapboxgl from "mapbox-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
-
-mapboxgl.accessToken = import.meta.env.VITE_MAPBOXGL_ACCESS_TOKEN;
+import React, { useEffect, useRef, useState } from "react";
+import maplibregl from "maplibre-gl";
+import "maplibre-gl/dist/maplibre-gl.css";
 
 interface Issue {
     _id: string;
@@ -18,21 +16,37 @@ interface IssueMapViewProps {
 
 const IssueMapView: React.FC<IssueMapViewProps> = ({ issues }) => {
     const mapContainer = useRef<HTMLDivElement>(null);
-    const mapRef = useRef<mapboxgl.Map | null>(null);
-    const markersRef = useRef<mapboxgl.Marker[]>([]);
+    const mapRef = useRef<maplibregl.Map | null>(null);
+    const markersRef = useRef<maplibregl.Marker[]>([]);
+    const [userLocation, setUserLocation] = useState<[number, number]>([31.0530, -17.8248]); // Default Harare
+
+    useEffect(() => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    setUserLocation([position.coords.longitude, position.coords.latitude]);
+                },
+                (error) => console.warn("Geolocation denied or error", error),
+                { enableHighAccuracy: true }
+            );
+        }
+    }, []);
 
     useEffect(() => {
         if (!mapContainer.current) return;
 
         if (!mapRef.current) {
-            mapRef.current = new mapboxgl.Map({
+            mapRef.current = new maplibregl.Map({
                 container: mapContainer.current,
-                style: "mapbox://styles/mapbox/streets-v12",
-                center: [31.0530, -17.8248], // Harare, Zimbabwe default
+                style: "https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json",
+                center: userLocation,
                 zoom: 11,
             });
 
-            mapRef.current.addControl(new mapboxgl.NavigationControl(), 'top-right');
+            mapRef.current.addControl(new maplibregl.NavigationControl(), 'top-right');
+        } else {
+            // Update center if it was dynamically fetched later and map already exists
+            mapRef.current.setCenter(userLocation);
         }
 
         // Clear old markers
@@ -51,13 +65,13 @@ const IssueMapView: React.FC<IssueMapViewProps> = ({ issues }) => {
 
             // Ensure valid coords
             if (issue.location && typeof issue.location.longitude === "number" && typeof issue.location.latitude === "number") {
-                const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
+                const popup = new maplibregl.Popup({ offset: 25 }).setHTML(
                     `<strong>${issue.title}</strong><br/>
            Status: <em>${issue.status}</em><br/>
            Type: ${issue.type}`
                 );
 
-                const marker = new mapboxgl.Marker({ color })
+                const marker = new maplibregl.Marker({ color })
                     .setLngLat([issue.location.longitude, issue.location.latitude])
                     .setPopup(popup)
                     .addTo(mapRef.current!);
@@ -66,7 +80,7 @@ const IssueMapView: React.FC<IssueMapViewProps> = ({ issues }) => {
             }
         });
 
-    }, [issues]);
+    }, [issues, userLocation]);
 
     return <div ref={mapContainer} style={{ width: "100%", height: "600px", borderRadius: "8px", overflow: "hidden", border: "1px solid #e2e8f0" }} />;
 };

@@ -6,6 +6,7 @@ import { LoaderOverlay } from "./LoaderOverlay";            // ADD THIS if your 
 import { Toaster as Sonner, Toaster } from "sonner";
 import AnimatedRoutes from "./AnimateRoutes";
 import "./index.css";
+import { ThemeProvider } from "./components/ThemeProvider";
 
 
 
@@ -13,16 +14,18 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <AuthProvider>
-      <LoaderProvider> {/* <-- NEW CONTEXT PROVIDER */}
-        <LoaderOverlay /> {/* <-- Global overlay gets rendered here */}
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <AnimatedRoutes />
-        </BrowserRouter>
-      </LoaderProvider>
-    </AuthProvider>
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <AuthProvider>
+        <LoaderProvider> {/* <-- NEW CONTEXT PROVIDER */}
+          <LoaderOverlay /> {/* <-- Global overlay gets rendered here */}
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <AnimatedRoutes />
+          </BrowserRouter>
+        </LoaderProvider>
+      </AuthProvider>
+    </ThemeProvider>
   </QueryClientProvider>
 );
 

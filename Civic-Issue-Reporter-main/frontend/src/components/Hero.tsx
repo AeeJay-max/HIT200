@@ -121,7 +121,7 @@ const Hero = () => {
 
               {/* Floating card: Issue Reported */}
               <div
-                className="absolute top-6 left-6 bg-white/70 backdrop-blur-md border border-white/30 rounded-xl shadow-lg p-4
+                className="absolute top-6 left-6 bg-white/70 dark:bg-gray-500 dark:border-white/10 backdrop-blur-md border border-white/30 rounded-xl shadow-lg p-4
                  transition-all duration-500 ease-out
                  group-hover:translate-y-1 group-hover:scale-[1.02]"
               >
@@ -135,7 +135,7 @@ const Hero = () => {
 
               {/* Floating card: Community Active */}
               <div
-                className="absolute bottom-6 right-6 bg-white/70 backdrop-blur-md border border-white/30 rounded-xl shadow-lg p-4
+                className="absolute bottom-6 right-6 bg-white/70 dark:bg-gray-500 dark:border-white/10 backdrop-blur-md border border-white/30 rounded-xl shadow-lg p-4
                  transition-all duration-500 ease-out delay-100
                  group-hover:-translate-y-1 group-hover:scale-[1.02]"
               >

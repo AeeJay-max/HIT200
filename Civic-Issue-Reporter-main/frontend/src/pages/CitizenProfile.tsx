@@ -137,19 +137,19 @@ const CitizenProfile = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#f3f6f8]">
+    <div className="min-h-screen bg-background">
       {/* Navbar */}
       <HeaderAfterAuth />
 
       <div className="pt-20 container mx-auto my-9 max-w-4xl space-y-6 px-4">
         {/* Profile Header */}
         <Card
-          className="bg-white/80 
-  border border-white/20 
+          className="bg-white/80 dark:bg-gray-500
+  border border-white/20 dark:border-white/10
   shadow-lg 
   rounded-xl 
   p-6 
-  ring-1 ring-white/10 
+  ring-1 ring-white/10 dark:ring-white/5
   hover:shadow-xl transition-shadow duration-300 
   "
         >
@@ -251,12 +251,12 @@ const CitizenProfile = () => {
         {/* Issues Statistics */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <Card
-            className="bg-white/70 
-  border border-white/20 
+            className="bg-white/70 dark:bg-gray-500
+  border border-white/20 dark:border-white/10
   shadow-lg 
   rounded-xl 
   p-6 
-  ring-1 ring-white/10 
+  ring-1 ring-white/10 dark:ring-white/5
   hover:shadow-xl transition-shadow duration-300 
   hover:scale-[1.02] transition-transform
  "
@@ -287,12 +287,12 @@ const CitizenProfile = () => {
             </CardContent>
           </Card>
           <Card
-            className="bg-white/70 
-  border border-white/20 
+            className="bg-white/70 dark:bg-gray-500
+  border border-white/20 dark:border-white/10
   shadow-lg 
   rounded-xl 
   p-6 
-  ring-1 ring-white/10 
+  ring-1 ring-white/10 dark:ring-white/5
   hover:shadow-xl transition-shadow duration-300 
   hover:scale-[1.02] transition-transform
 "
@@ -329,12 +329,12 @@ const CitizenProfile = () => {
 
         {/* Reported Issues */}
         <Card
-          className="bg-white/70 
-  border border-white/20 
+          className="bg-white/70 dark:bg-gray-500
+  border border-white/20 dark:border-white/10
   shadow-lg 
   rounded-xl 
   p-6 
-  ring-1 ring-white/10 
+  ring-1 ring-white/10 dark:ring-white/5
   hover:shadow-xl transition-shadow duration-300 
   "
         >

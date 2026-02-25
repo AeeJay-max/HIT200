@@ -68,7 +68,7 @@ const HowItWorks = () => {
                 viewport={{ once: true, amount: 0.2 }}
                 custom={index}
               >
-                <Card className="group  backdrop-blur-md hover:shadow-lg transition-all duration-300 hover:-translate-y-2 bg-white/70 shadow-lg   ">
+                <Card className="group  backdrop-blur-md hover:shadow-lg transition-all duration-300 hover:-translate-y-2 bg-white/70 dark:bg-gray-500 dark:border-white/10 shadow-lg   ">
                   <CardContent className="p-6 text-center">
                     <div className="relative mb-6">
                       <div
